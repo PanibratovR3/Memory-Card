@@ -1,28 +1,24 @@
-import { useState, useEffect } from "react";
 import "./App.css";
+import Card from "./components/card.jsx";
 
 function App() {
-  const results = useData("http://pokeapi.co/api/v2/pokemon/bulbasaur");
-  function useData(url) {
-    const [data, setData] = useState(null);
-    useEffect(() => {
-      let ignore = false;
-      fetch(url)
-        .then((response) => response.json())
-        .then((json) => {
-          if (!ignore) {
-            setData(json.sprites.other["official-artwork"].front_default);
-          }
-        });
-      return () => {
-        ignore = true;
-      };
-    }, [url]);
-    return data;
-  }
   return (
     <div>
-      <img src={results} />
+      <div className="header">Pokemon Memory Card Game</div>
+      <div className="card-container">
+        <Card name="Pikachu" />
+        <Card name="Ditto" />
+        <Card name="Bulbasaur" />
+        <Card name="Slowpoke" />
+        <Card name="Psyduck" />
+        <Card name="Dragonite" />
+        <Card name="Squirtle" />
+        <Card name="Charizard" />
+        <Card name="Charmander" />
+        <Card name="Gengar" />
+        <Card name="Butterfree" />
+        <Card name="Vaporeon" />
+      </div>
     </div>
   );
 }
