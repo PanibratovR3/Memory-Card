@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/card.css";
 
-function Card({ name }) {
+function Card({ id, name, handlerClick }) {
   const results = useData(`http://pokeapi.co/api/v2/pokemon/${name}`);
   function useData(url) {
     const [data, setData] = useState(null);
@@ -22,7 +22,7 @@ function Card({ name }) {
   }
 
   return (
-    <div className="card">
+    <div className="card" onClick={() => handlerClick(id)}>
       <div className="image-placeholder">
         <img src={results} />
       </div>
