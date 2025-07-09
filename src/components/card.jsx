@@ -24,7 +24,7 @@ function Card({ name }) {
   return (
     <div className="card">
       <div className="image-placeholder">
-        <img src={results} alt={name} />
+        <img src={results} />
       </div>
       <div>{name}</div>
     </div>
