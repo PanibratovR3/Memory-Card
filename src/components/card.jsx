@@ -11,7 +11,6 @@ function Card({ name }) {
         .then((response) => response.json())
         .then((json) => {
           if (!ignore) {
-            console.log(json);
             setData(json.sprites.other["official-artwork"].front_default);
           }
         });
