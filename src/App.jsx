@@ -16,30 +16,27 @@ function App() {
     ...shuffleCards(pokemonCards),
   ]);
   const [currentScore, setCurrentScore] = useState(0);
-  console.log("Current score: ", currentScore);
-  // const [selectedID, setSelectedID] = useState(null);
+  const [bestScore, setBestScore] = useState(0);
 
   const handleClick = (id) => {
-    console.log(id);
     let memoryCardsCopy = [...memoryCards];
     const selectedCard = memoryCardsCopy.find(
       (memoryCard) => memoryCard.id === id
     );
     const selectedCardFlag = selectedCard.wasClicked;
-    console.log(selectedCardFlag);
     if (!selectedCardFlag) {
-      console.log("Adding...");
       selectedCard.wasClicked = !selectedCardFlag;
       setCurrentScore(currentScore + 1);
-      console.log(selectedCard);
     } else {
-      console.log("Reset...");
       memoryCardsCopy = memoryCardsCopy.map((memoryCardItem) => {
         return {
           ...memoryCardItem,
           wasClicked: false,
         };
       });
+      if (currentScore > bestScore) {
+        setBestScore(currentScore);
+      }
       setCurrentScore(0);
     }
     setMemoryCards([...shuffleCards(memoryCardsCopy)]);
@@ -53,7 +50,10 @@ function App() {
       </div>
       <div className="header-row">
         <div className="current-score">Current Score: {currentScore}</div>{" "}
-        <div className="best-score">Best Score: </div>
+        <div className="best-score">Best Score: {bestScore}</div>
+      </div>
+      <div className="win">
+        {currentScore === pokemonCards.length && "Nice memory! ;-)"}
       </div>
       <div className="card-container">
         {memoryCards.map((cardItem) => {
