@@ -3,6 +3,7 @@ import Card from "./components/card.jsx";
 import pokemonCards from "./components/data.jsx";
 import { useState } from "react";
 import Header from "./components/header.jsx";
+import GameBoard from "./components/gameBoard.jsx";
 
 function shuffleCards(cards) {
   for (let i = cards.length - 1; i >= 1; i--) {
@@ -46,7 +47,7 @@ function App() {
   return (
     <div>
       <Header currentScore={currentScore} bestScore={bestScore} />
-      <div className="card-container">
+      <GameBoard>
         {memoryCards.map((cardItem) => {
           return (
             <Card
@@ -57,7 +58,7 @@ function App() {
             />
           );
         })}
-      </div>
+      </GameBoard>
     </div>
   );
 }
