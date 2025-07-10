@@ -10,29 +10,7 @@
   padding: 10px;
 }
 
-.header {
-  font-size: 3.5rem;
-  font-weight: bold;
-  /* text-align: left; */
-}
 
-.description {
-  font-size: 3rem;
-  font-style: italic;
-}
-.header-row {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-
-.current-score, .best-score {
-  font-size: 1.5rem;
-}
-
-.win {
-  font-size: 2rem;
-}
 
 * {
   margin: 0;
@@ -41,8 +19,4 @@
 
 body {
   background-color: lightgreen;
-}
-
-.header-container {
-  color: rgb(202, 51, 51);
 }

@@ -2,6 +2,7 @@ import "./App.css";
 import Card from "./components/card.jsx";
 import pokemonCards from "./components/data.jsx";
 import { useState } from "react";
+import Header from "./components/header.jsx";
 
 function shuffleCards(cards) {
   for (let i = cards.length - 1; i >= 1; i--) {
@@ -44,19 +45,7 @@ function App() {
 
   return (
     <div>
-      <div className="header-container">
-        <div className="header">Pokemon Memory Card Game</div>
-        <div className="description">
-          Get your points by clicking on the cards, but only without repetition.
-        </div>
-        <div className="header-row">
-          <div className="current-score">Current Score: {currentScore}</div>{" "}
-          <div className="best-score">Best Score: {bestScore}</div>
-        </div>
-        <div className="win">
-          {currentScore === pokemonCards.length && "Nice memory! ;-)"}
-        </div>
-      </div>
+      <Header currentScore={currentScore} bestScore={bestScore} />
       <div className="card-container">
         {memoryCards.map((cardItem) => {
           return (
