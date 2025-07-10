@@ -26,7 +26,7 @@ function Card({ id, name, handlerClick }) {
       <div className="image-placeholder">
         <img src={results} />
       </div>
-      <div>{name}</div>
+      <div className="card-name">{name}</div>
     </div>
   );
 }

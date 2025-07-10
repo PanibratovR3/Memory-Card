@@ -2,8 +2,28 @@
     border: 5px solid black;
     max-width: 250px;
     border-radius: 30px;
+    background-color: navy;
+    color: white;
 }
 
+.card:hover {
+    box-shadow: 5px 10px 30px orange;
+}
 .image-placeholder img {
     width: 100%;
+}
+
+.card-name {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.image-placeholder {
+    background-color: cyan;
+    border-radius: 30px;
 }
