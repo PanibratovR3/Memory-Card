@@ -1,12 +1,13 @@
-# React + Vite
+# Memory card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this game user must select all Pokemon cards in order to get maximum points. After picking one card, the deck shuffles randomly. If the user clicks on the same card twice, the current score resets.
 
-Currently, two official plugins are available:
+Next tools were used for implementation:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- CSS;
+- Javascript;
+- React.
 
-## Expanding the ESLint configuration
+For using images of Pokemons for cards [PokeAPI](https://pokeapi.co) was used.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+In this project I applied knowledge of using hook `useEffect()` for interaction with API. The only challenge during the implementation was keeping JSON-response in memory.
